@@ -1,0 +1,21 @@
+module.exports = {
+    AUTO_VIEW_STATUS: 'true',
+    AUTO_LIKE_STATUS: 'true',
+    AUTO_RECORDING: 'true',
+    AUTO_LIKE_EMOJI: ['🧩', '🍉', '💜', '🌸', '🪴', '💊', '💫', '🍂', '🌟', '🎋', '😶‍🌫️', '🫀', '🧿', '👀', '😘', '🚩', '🥰', '🗿', '💜', '💙', '🌝', '🖤', '💗'],
+    PREFIX: '.',
+    MAX_RETRIES: 3,
+    GROUP_INVITE_LINK: 'https://chat.whatsapp.com/EuXje15Rrrn9HkSBTSMEcF?mode=ems_copy_t',
+    ADMIN_LIST_PATH: './admin.json',
+    IMAGE_PATH: 'https://i.postimg.cc/fbLksDqz/Screenshot-20251005-224142-Whats-App-Business.jpg',
+    NEWSLETTER_JID: '120363398106360290@newsletter',
+    NEWSLETTER_MESSAGE_ID: '5775',
+    OTP_EXPIRY: 300000,
+    NEWS_JSON_URL: '',
+    BOT_NAME: '☭𝙻𝙾𝙵𝚃-𝚀𝚄𝙰𝙽𝚃𝚄𝙼-𝚅𝙸𝙸☭',
+    OWNER_NAME: '𝙻𝚘𝚏𝚝 𝚀𝚞𝚊𝚗𝚝𝚞𝚖',
+    OWNER_NUMBER: '255778018545',
+    BOT_VERSION: '2.0.0 ʙᴇᴛᴀ',
+    BOT_FOOTER: '> © 𝚙𝚘𝚠𝚎𝚛𝚎𝚍 𝚋𝚢 𝚂𝚒𝚛 𝙻𝙾𝙵𝚃',
+    CHANNEL_LINK: 'https://whatsapp.com/channel/0029Vb6B9xFCxoAseuG1g610'
+};

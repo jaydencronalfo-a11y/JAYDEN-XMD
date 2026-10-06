@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>⚡ 𝙹𝙰𝚈𝙳𝙴𝙽-𝙼𝙳 ⚡</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    @keyframes techGlow {
+      0%, 100% { filter: brightness(1) hue-rotate(0deg); }
+      50% { filter: brightness(1.4) hue-rotate(15deg); }
+    }
+
+    @keyframes techPulse {
+      0%, 100% { box-shadow: 0 0 15px #00c3ff, 0 0 35px #0066ff; }
+      50% { box-shadow: 0 0 25px #00c3ff, 0 0 60px #0066ff; }
+    }
+
+    @keyframes techSpin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* ===== BACKGROUND (STATIC BLUE→BLACK) ===== */
+    body {
+      font-family: 'Orbitron', monospace;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: radial-gradient(ellipse at center, #001a33 0%, #000a1a 50%, #000000 100%);
+    }
+
+    /* ===== STATIC BOX ===== */
+    .tech-box {
+      position: relative;
+      background: rgba(0, 10, 26, 0.92);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      border: 1px solid rgba(0, 195, 255, 0.25);
+      padding: 2.5rem 2rem;
+      width: 100%;
+      max-width: 440px;
+      box-shadow:
+        0 0 25px rgba(0, 195, 255, 0.15),
+        0 0 60px rgba(0, 102, 255, 0.08),
+        inset 0 0 30px rgba(0, 195, 255, 0.03);
+    }
+
+    /* ===== GRADIENT TEXT ===== */
+    .tech-gradient {
+      background: linear-gradient(90deg, #00c3ff, #0066ff, #00c3ff);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: techGlow 4s ease-in-out infinite;
+    }
+
+    /* ===== NEON ===== */
+    .tech-neon {
+      text-shadow:
+        0 0 5px #00c3ff,
+        0 0 15px #0066ff,
+        0 0 30px #00c3ff;
+    }
+
+    /* ===== BUTTON ===== */
+    .tech-button {
+      background: linear-gradient(135deg, #0066ff, #000814);
+      border: 1px solid rgba(0, 195, 255, 0.4);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 0 20px rgba(0, 102, 255, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tech-button::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(0, 195, 255, 0.3), transparent);
+      transition: left 0.5s;
+    }
+
+    .tech-button:hover::before { left: 100%; }
+
+    .tech-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(0, 195, 255, 0.6), 0 0 60px rgba(0, 102, 255, 0.3);
+    }
+
+    .tech-button:active { transform: translateY(0) scale(0.98); }
+
+    /* ===== INPUT ===== */
+    .tech-input {
+      background: rgba(0, 20, 40, 0.7);
+      border: 1px solid rgba(0, 195, 255, 0.3);
+      color: #ffffff;
+      caret-color: #00c3ff;
+      transition: all 0.3s ease;
+    }
+
+    .tech-input::placeholder {
+      color: rgba(0, 195, 255, 0.45);
+    }
+
+    .tech-input:focus {
+      border-color: #00c3ff;
+      background: rgba(0, 30, 60, 0.9);
+      box-shadow: 0 0 25px rgba(0, 195, 255, 0.4);
+      outline: none;
+    }
+
+    /* ===== LOADER ===== */
+    .tech-loader {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(0, 195, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: #00c3ff;
+      animation: techSpin 0.8s linear infinite;
+    }
+
+    /* ===== CODE BOX ===== */
+    .tech-code-box {
+      background: rgba(0, 20, 40, 0.7);
+      border: 1px solid rgba(0, 195, 255, 0.3);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .tech-code-box:hover {
+      border-color: #00c3ff;
+      background: rgba(0, 30, 60, 0.9);
+      box-shadow: 0 0 25px rgba(0, 195, 255, 0.35);
+    }
+
+    /* ===== DIVIDER ===== */
+    .tech-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: #00c3ff;
+      font-size: 0.65rem;
+      letter-spacing: 3px;
+      font-weight: 700;
+    }
+
+    .tech-divider::before,
+    .tech-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0, 195, 255, 0.4), transparent);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 480px) {
+      .tech-box { padding: 2rem 1.5rem; border-radius: 20px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== TULIVU BOX ===== -->
+  <div class="tech-box text-center">
+
+    <!-- ICON -->
+    <div class="flex justify-center mb-5">
+      <i class="fas fa-microchip text-6xl tech-gradient"></i>
+    </div>
+
+    <!-- TITLE -->
+    <h1 class="text-3xl font-black mb-2 tech-gradient tech-neon tracking-widest">
+      𝙹𝙰𝚈𝙳𝙴𝙽 𝙼𝙳
+    </h1>
+    <p class="text-cyan-400 text-xs tracking-widest mb-5" style="opacity:0.7;">
+      ⚡ 𝚂𝙴𝙲𝚄𝚁𝙴 𝙰𝙲𝙲𝙴𝚂𝚂 ⚡
+    </p>
+
+    <!-- DIVIDER -->
+    <div class="tech-divider mb-6">
+      <span>⟐ 𝚙𝚘𝚠𝚎𝚛𝚎𝚍 𝚋𝚢 𝚂𝚒𝚛 JAYDEN XMD ⟐</span>
+    </div>
+
+    <!-- INPUT + BUTTON -->
+    <div class="space-y-4">
+      <input
+        id="number"
+        type="number"
+        placeholder="+255xxxxxxxxx"
+        class="tech-input w-full px-5 py-4 rounded-xl focus:outline-none focus:ring-0 text-lg font-mono"
+      />
+      <button
+        id="submit"
+        class="tech-button w-full px-6 py-4 rounded-xl text-white font-black uppercase tracking-widest text-lg"
+      >
+        ⟐ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴 𝙲𝙾𝙳𝙴 ⟐
+      </button>
+    </div>
+
+    <!-- STATUS -->
+    <div id="waiting-message" class="text-center tech-gradient text-lg hidden mt-6 flex items-center justify-center space-x-2">
+      <span class="tech-loader"></span>
+      <span>𝙿𝚁𝙾𝙲𝙴𝚂𝚂𝙸𝙽𝙶...</span>
+    </div>
+    <main id="pair" class="text-center mt-6"></main>
+
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
+  <script>
+    const pairOutput = document.getElementById("pair");
+    const submitBtn = document.getElementById("submit");
+    const inputNum = document.getElementById("number");
+    const waitingMessage = document.getElementById("waiting-message");
+
+    // ===== COPY =====
+    async function Copy() {
+      const obj = document.getElementById("copy");
+      const originalText = obj.innerText;
+      const code = originalText.replace('𝙲𝙾𝙳𝙴: ', '').replace('CODE: ', '').trim();
+
+      await navigator.clipboard.writeText(code);
+      obj.innerHTML = `<i class="fas fa-check-circle mr-2"></i> 𝙲𝙾𝙿𝙸𝙴𝙳 ⟐`;
+      obj.classList.add('bg-cyan-600', 'bg-opacity-30', 'border-cyan-500');
+
+      setTimeout(() => {
+        obj.innerHTML = originalText;
+        obj.classList.remove('bg-cyan-600', 'bg-opacity-30', 'border-cyan-500');
+      }, 2000);
+    }
+
+    // ===== SUBMIT =====
+    submitBtn.addEventListener("click", async (e) => {
+      e.preventDefault();
+
+      const numVal = inputNum.value;
+      if (!numVal) {
+        pairOutput.innerHTML = `<div class="text-red-400 font-black mt-4 animate-pulse">⚠️ 𝙸𝙽𝙿𝚄𝚃 𝚈𝙾𝚄𝚁 𝙸𝙳</div>`;
+        return;
+      }
+      if (numVal.replace(/[^0-9]/g, "").length < 11) {
+        pairOutput.innerHTML = `<div class="text-red-400 font-black mt-4 animate-pulse">❌ 𝙸𝙽𝚅𝙰𝙻𝙸𝙳 𝙸𝙳</div>`;
+        return;
+      }
+
+      const cleanNum = numVal.replace(/[^0-9]/g, "");
+      inputNum.type = "text";
+      inputNum.value = "+" + cleanNum;
+      inputNum.classList.add('text-white', 'text-xl', 'font-mono');
+      waitingMessage.classList.remove('hidden');
+      pairOutput.innerHTML = '';
+
+      try {
+        // PATH HAIBADILISHWI
+        const { data } = await axios(`/code?number=${cleanNum}`);
+        const code = data.code || `U${Math.random().toString(36).substr(2, 6).toUpperCase()}`;
+        waitingMessage.classList.add('hidden');
+
+        pairOutput.innerHTML = `
+          <div class="mt-6">
+            <div class="text-4xl tech-gradient mb-3">⟐</div>
+            <div class="text-cyan-300 text-sm font-bold mb-3">𝙰𝙲𝙲𝙴𝚂𝚂 𝙶𝚁𝙰𝙽𝚃𝙴𝙳</div>
+            <div id="copy" onclick="Copy()" class="tech-code-box inline-block px-6 py-3">
+              <span class="font-black text-white text-base">𝙲𝙾𝙳𝙴: </span>
+              <span class="font-black tech-gradient text-xl">${code}</span>
+            </div>
+            <div class="text-cyan-300 text-xs mt-3 font-mono">⟐ 𝙲𝙻𝙸𝙲𝙺 𝚃𝙾 𝙲𝙾𝙿𝚈 ⟐</div>
+          </div>
+        `;
+      } catch {
+        waitingMessage.classList.add('hidden');
+        pairOutput.innerHTML = `<div class="text-red-400 font-black mt-4 animate-pulse">❌ 𝙵𝙰𝙸𝙻𝙴𝙳. 𝚁𝙴𝚃𝚁𝚈 ⟐</div>`;
+      }
+    });
+  </script>
+</body>
+</html>
