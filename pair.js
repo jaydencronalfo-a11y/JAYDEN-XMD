@@ -45,10 +45,9 @@ const config = {
     NEWSLETTER_MESSAGE_ID: '0088',
     OTP_EXPIRY: 300000,
     NEWS_JSON_URL: '',
-    BOT_NAME: '☭JAYDEN XMD☭',
-    OWNER_NAME: 'JAYDEN XMD',
-    OWNER_NUMBER: "255696923001"
-    ',
+    BOT_NAME: '☭𝙻𝙾𝙵𝚃-𝚀𝚄𝙰𝙽𝚃𝚄m☭',
+    OWNER_NAME: '𝙻𝚘𝚏𝚝',
+    OWNER_NUMBER: '255778018545',
     BOT_VERSION: '1.0.0',
     BOT_FOOTER: '> 𝚙𝚘𝚠𝚎𝚛𝚎𝚍 𝚋𝚢 𝚂𝚒𝚛 𝙻𝙾𝙵𝚃',
     CHANNEL_LINK: 'https://whatsapp.com/channel/0029Vb6B9xFCxoAseuG1g610',
